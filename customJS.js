@@ -9,18 +9,7 @@ function removeMissionStatementOnMobile() {
   }
 }
 
-function hideWidgetsOnNewProductPage() {
-  if (document.location.href.includes("page_id=1856")) {
-    document.querySelector(".widget_media_gallery").style.display = "none";
-    document.querySelector(".widget_contact_info").style.display = "none";
-    /*
-    document.getElementById("widget_contact_info-3").style.display = "none";
-    document.getElementById("media_gallery-3").style.display = "none";
-    */
-  }
-}
-
-function hideWidgetsOnOldProductPage() {
+function hideWidgetsOnProductPage() {
   if (document.location.href.includes("produkter")) {
     document.querySelector(".widget_media_gallery").style.display = "none";
     document.querySelector(".widget_contact_info").style.display = "none";
@@ -32,6 +21,13 @@ function hideWidgetsOnSofticePage() {
     document.querySelector(".widget_media_gallery").style.display = "none";
     document.querySelector(".widget_contact_info").style.display = "none";
     document.querySelector(".widget-title").style.marginTop = "0px";
+    document.querySelector(".widget-title").style.marginTop = "0px";
+    document.querySelectorAll(".wp-block-media-text")[0].style.paddingTop =
+      "0px";
+    document.querySelectorAll(".wp-block-media-text")[0].style.paddingBottom =
+      "0px";
+    document.querySelectorAll(".wp-block-media-text")[1].style.paddingTop =
+      "0px";
   }
 }
 
@@ -39,6 +35,7 @@ function hideWidgetsOnTuk() {
   if (document.location.href.includes("tuk-tuk")) {
     document.querySelector(".widget_media_gallery").style.display = "none";
     document.querySelector(".widget_contact_info").style.display = "none";
+    document.querySelector(".entry-title").style.marginTop = "40px";
   }
 }
 
@@ -73,8 +70,7 @@ function hideWidgetsOnNews() {
 
 document.addEventListener("DOMContentLoaded", function () {
   removeMissionStatementOnMobile();
-  hideWidgetsOnNewProductPage();
-  hideWidgetsOnOldProductPage();
+  hideWidgetsOnProductPage();
   hideWidgetsOnSofticePage();
   hideWidgetsOnTuk();
   hideWidgetsOnFestAndGames();
