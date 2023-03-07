@@ -5,6 +5,13 @@ function hideMapAndImageSidebarOnConctack() {
   }
 }
 
+function hideWidgetsOnProductPage() {
+  if (document.location.href.includes("produkter")) {
+    document.querySelector(".widget_media_gallery").style.display = "none";
+    document.querySelector(".widget_contact_info").style.display = "none";
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   hideMapAndImageSidebarOnConctack();
 });
