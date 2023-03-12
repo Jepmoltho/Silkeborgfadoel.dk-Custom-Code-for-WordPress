@@ -38,8 +38,82 @@
   display: none !important;
 }
 
+/*Cookie banner*/
+.cookie-revoke-hidden {
+  opacity: 0.95;
+}
+.cookie-notice-container {
+  background-color: #ebbb40;
+  color: antiquewhite;
+}
+
+.cookie-notice-banner {
+  color: black !important;
+}
+
+.cn-button {
+  background-color: antiquewhite !important;
+  color: black !important;
+}
+
 /*Mobile*/
 @media screen and (max-width: 800px) {
+  /*Sets background image on mobile only on front page*/
+  .page-id-2 .site-content {
+    background-image: url(https://silkeborgfadoel.dk/wp-content/uploads/2023/03/Oelbillede-baggrund-cropped-1-526107530-e1678530022437.jpeg) !important;
+  }
+
+  .page-id-1856 .site-description,
+  .page-id-1222 .site-description,
+  .page-id-957 .site-description,
+  .page-id-945 .site-description,
+  .page-id-197 .site-description,
+  .page-id-196 .site-description,
+  .page-id-193 .site-description {
+    display: none;
+  }
+
+  .page-id-1856 .entry-header,
+  .page-id-1222 .entry-header,
+  .page-id-957 .entry-header,
+  .page-id-945 .entry-header,
+  .page-id-197 .entry-header,
+  .page-id-196 .entry-header,
+  .page-id-193 .entry-header {
+    display: none;
+  }
+
+  .page-id-1856 .site-branding,
+  .page-id-1222 .site-branding,
+  .page-id-957 .site-branding,
+  .page-id-945 .site-branding,
+  .page-id-197 .site-branding,
+  .page-id-196 .site-branding,
+  .page-id-193 .site-branding {
+    padding-bottom: 0px;
+  }
+
+  .page-id-1856 .site-content,
+  .page-id-1222 .site-content,
+  .page-id-957 .site-content,
+  .page-id-945 .site-content,
+  .page-id-197 .site-content,
+  .page-id-196 .site-content,
+  .page-id-193 .site-content {
+    padding-top: 0px !important;
+  }
+
+  /*
+    document.querySelector(".site-description").style.display = "none";
+    document.querySelector(".entry-header").style.display = "none";
+    document.querySelector(".site-branding").style.paddingBottom = "0px";
+    document.querySelector(".site-content").style.paddingTop = "0px";
+  */
+
+  .site-branding {
+    padding-bottom: 2px !important;
+  }
+
   .menu-toggle {
     padding-right: 15px;
     padding-top: 30px;
@@ -95,6 +169,18 @@
 
   .widget_block .widget-title {
     font-size: 35px;
+  }
+
+  .logo-container-mobile {
+    position: absolute;
+    left: 295px;
+    top: 12px;
+    height: 80px;
+    width: 80px;
+  }
+
+  #site-top-search-form {
+    display: none;
   }
 }
 
