@@ -93,14 +93,18 @@ function addOpeningHours() {
 
 function addSecondPhoneNumber() {
   var contactInformation = document.querySelector(".contact-information");
+  var firstPhone = document.querySelector(".contact-information .telephone");
+  firstPhone.style.marginRight = "2px";
+  firstPhone.style.display = "inline";
 
   if (contactInformation) {
     var telephoneSpan = document.createElement("span");
-    telephoneSpan.className = "telephone fa fa-phone";
+    telephoneSpan.className = "second-telephone";
     telephoneSpan.setAttribute("itemprop", "telephone");
+    telephoneSpan.style.display = "inline";
 
     var telephoneLink = document.createElement("a");
-    telephoneLink.href = "tel:+30326664";
+    telephoneLink.href = "tel:+45 30326664";
 
     var screenReaderText = document.createElement("span");
     screenReaderText.className = "screen-reader-text";
@@ -109,8 +113,7 @@ function addSecondPhoneNumber() {
     telephoneLink.appendChild(screenReaderText);
 
     var telephoneNumber = document.createElement("span");
-    telephoneNumber.textContent = "30326664";
-    telephoneNumber.style.paddingLeft = "3px";
+    telephoneNumber.textContent = " / +45 30326664";
 
     telephoneLink.appendChild(telephoneNumber);
 
