@@ -56,6 +56,15 @@
   color: black !important;
 }
 
+.page-id-1856 .contact-map,
+.page-id-1222 .contact-map,
+.page-id-957 .contact-map,
+.page-id-945 .contact-map,
+.page-id-196 .contact-map,
+.page-id-193 .contact-map {
+  display: none;
+}
+
 /*Mobile*/
 @media screen and (max-width: 800px) {
   /*Sets background image on mobile only on front page*/
@@ -238,5 +247,9 @@
   .widget_block .widget-title {
     font-weight: bold;
     font-size: 20px;
+  }
+
+  .contact-map {
+    padding-left: 50px;
   }
 }
