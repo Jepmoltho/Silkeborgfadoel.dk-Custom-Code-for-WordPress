@@ -56,12 +56,19 @@
   color: black !important;
 }
 
+/* Hide contact map (google maps) on all pages except contact page */
 .page-id-1856 .contact-map,
 .page-id-1222 .contact-map,
 .page-id-957 .contact-map,
 .page-id-945 .contact-map,
 .page-id-196 .contact-map,
 .page-id-193 .contact-map {
+  display: none;
+}
+
+/* Hide contact widget on contact page*/
+.page-id-197 #block-2,
+.page-id-197 #block-7 {
   display: none;
 }
 
@@ -251,5 +258,9 @@
 
   .contact-map {
     padding-left: 50px;
+  }
+
+  .page-id-957 .entry-header {
+    padding-top: 2rem;
   }
 }
