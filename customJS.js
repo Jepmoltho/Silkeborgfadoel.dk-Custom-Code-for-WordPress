@@ -68,6 +68,31 @@ function hideWidgetsOnNews() {
   }
 }
 
+function addOpeningHours() {
+  var contactInformation = document.querySelector(".contact-information");
+
+  // Check if the element is found
+  if (contactInformation) {
+    // Create a new span element
+    var openingHoursSpan = document.createElement("span");
+    openingHoursSpan.className = "opening-hours";
+
+    // Create an 'i' element with Font Awesome classes
+    var clockIcon = document.createElement("i");
+    clockIcon.className = "fa fa-clock-o";
+    clockIcon.setAttribute("aria-hidden", "true");
+
+    // Append the 'i' element to the 'span' element
+    openingHoursSpan.appendChild(clockIcon);
+
+    // Append the 'span' element to the 'contact-information' element
+    contactInformation.appendChild(openingHoursSpan);
+  }
+  // <span class="opening-hours">
+  //   <i class="fa fa-clock-o" aria-hidden="true"></i>
+  // </span>
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   removeMissionStatementOnMobile();
   hideWidgetsOnProductPage();
@@ -77,4 +102,5 @@ document.addEventListener("DOMContentLoaded", function () {
   hideWidgetsOnContact();
   hideWidgetsOnAbout();
   hideWidgetsOnNews();
+  addOpeningHours();
 });
