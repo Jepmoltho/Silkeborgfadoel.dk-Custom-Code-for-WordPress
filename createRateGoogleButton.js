@@ -173,80 +173,228 @@
 //   });
 // }
 
+// function createCircle() {
+//   // Create a container div for the circle
+//   var circleContainer = document.createElement("div");
+//   circleContainer.style.position = "fixed";
+//   circleContainer.style.bottom = "20px";
+//   circleContainer.style.right = "20px";
+//   circleContainer.style.zIndex = "9999";
+
+//   // Create the circle button
+//   var circleButton = document.createElement("button");
+//   circleButton.style.width = "150px"; // Initial width
+//   circleButton.style.height = "50px";
+//   circleButton.style.borderRadius = "25px"; // Initial border radius
+//   circleButton.style.backgroundColor = "#FFFFFF"; // Change circle background color to white
+//   //circleButton.style.border = "#e6d234";
+//   circleButton.style.border = "2px solid #4285F4"; // Add border with Google blue color
+//   circleButton.style.cursor = "pointer";
+//   circleButton.style.display = "flex"; // Make it a flex container
+//   circleButton.style.alignItems = "center"; // Center items vertically
+//   circleButton.style.padding = "0 10px"; // Add padding to separate logo and text
+
+//   // Create the image element for the webp image
+//   var imageElement = document.createElement("img");
+//   imageElement.src =
+//     "https://silkeborgfadoel.dk/wp-content/uploads/2024/04/Google__G__logo.svg_.webp";
+//   imageElement.style.width = "40px"; // Adjust logo size
+//   imageElement.style.height = "auto"; // Maintain aspect ratio
+
+//   // Create the text element
+//   var textElement = document.createElement("span");
+//   textElement.textContent = "Bedøm os";
+//   textElement.style.marginLeft = "10px"; // Add margin between logo and tex // Initially hide text
+
+//   // Append the image and text to the circle button
+//   circleButton.appendChild(imageElement);
+//   circleButton.appendChild(textElement);
+
+//   // Add click event to open Google in new tab
+//   circleButton.onclick = function () {
+//     window.open(
+//       "https://www.google.com/search?sca_esv=556fd070db8e09d3&sxsrf=ACQVn08rk407Os6IdfARRY3rIxfoRAL_-A:1714306992232&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCuQqLhOL229OZZ0qUXfn5ocfpAH3_Im-dovb8lf7mgY0EC6YlCD-OKrym7VYGilIUx4HJ8NQVIMGLM6YR1k_VxOtueNEARAD8QayBb2qGApO4NuBmU&si=AKbGX_oXOTjHK3vNPxrwAU4tsC2W_rsdJDrrSHpqUAOdbOh1q7pLHmnIHTu2hOPwX87tqHcQjz39HKoOwTWijtl_JwAVCU05bC-2-YeJr_eOMtMgG29z2Wo%3D&q=Silkeborg+Fad%C3%B8l+Reviews&sa=X&ved=2ahUKEwjj7rqa8-SFAxUIcfEDHTZcA78Q3PALegQIYxAF&biw=1536&bih=747&dpr=1.25",
+//       "_blank"
+//     );
+//   };
+
+//   // Append the button to the container
+//   circleContainer.appendChild(circleButton);
+
+//   // Append the container to the page
+//   document.getElementById("page").appendChild(circleContainer);
+
+//   // Add event listener for scroll
+//   window.addEventListener("scroll", function () {
+//     var scrollPosition = window.scrollY;
+//     if (scrollPosition > 0) {
+//       // Narrow the circle from the right with animation
+//       //textElement.style.opacity = "0";
+//       textElement.style.visibility = "hidden";
+
+//       circleButton.style.transition = "width 0.5s, border-radius 0.5s";
+//       circleButton.style.width = "50px"; // Adjust width to show only the logo
+//       circleButton.style.borderTopRightRadius = "25px"; // Adjust border radius
+//       circleButton.style.borderBottomRightRadius = "25px"; // Adjust border radius
+//       // Fade out the text
+//       textElement.style.transition = "opacity 0.5s"; //HERE
+//       // textElement.style.opacity = "0"; // Hide text
+//     } else {
+//       // Widen the circle with animation
+//       textElement.style.visibility = "hidden"; //HERE
+//       circleButton.style.transition = "width 0.5s, border-radius 0.5s";
+//       circleButton.style.width = "150px"; // Initial width
+//       circleButton.style.borderRadius = "25px"; // Initial border radius
+//       // Fade in the text
+//       setTimeout(function () {
+//         textElement.style.visibility = "visible";
+//         textElement.style.transition = "opacity 0.5s";
+//         textElement.style.opacity = "1"; // Show text
+//       }, 500); // Delay the text fade in to match the circle animation
+//     }
+//   });
+// }
+// document.addEventListener("DOMContentLoaded", function () {
+//   createCircle();
+// });
+
+// function createCircle() {
+//   var circleContainer = document.createElement("div");
+//   circleContainer.style.position = "fixed";
+//   circleContainer.style.bottom = "20px";
+//   circleContainer.style.right = "20px";
+//   circleContainer.style.zIndex = "9999";
+
+//   var circleButton = document.createElement("button");
+//   circleButton.style.width = "150px";
+//   circleButton.style.height = "50px";
+//   circleButton.style.borderRadius = "25px";
+//   circleButton.style.backgroundColor = "#FFFFFF";
+//   circleButton.style.border = "2px solid #4285F4";
+//   circleButton.style.cursor = "pointer";
+//   circleButton.style.display = "flex";
+//   circleButton.style.alignItems = "center";
+//   circleButton.style.padding = "0 10px";
+
+//   var imageElement = document.createElement("img");
+//   imageElement.src =
+//     "https://silkeborgfadoel.dk/wp-content/uploads/2024/04/Google__G__logo.svg_.webp";
+//   imageElement.style.width = "40px";
+//   imageElement.style.height = "auto";
+
+//   var textElement = document.createElement("span");
+//   textElement.textContent = "Bedøm os";
+//   textElement.style.marginLeft = "10px";
+//   textElement.style.whiteSpace = "nowrap";
+
+//   circleButton.appendChild(imageElement);
+//   circleButton.appendChild(textElement);
+
+//   circleButton.onclick = function () {
+//     window.open(
+//       "https://www.google.com/search?sca_esv=556fd070db8e09d3&sxsrf=ACQVn08rk407Os6IdfARRY3rIxfoRAL_-A:1714306992232&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCuQqLhOL229OZZ0qUXfn5ocfpAH3_Im-dovb8lf7mgY0EC6YlCD-OKrym7VYGilIUx4HJ8NQVIMGLM6YR1k_VxOtueNEARAD8QayBb2qGApO4NuBmU&si=AKbGX_oXOTjHK3vNPxrwAU4tsC2W_rsdJDrrSHpqUAOdbOh1q7pLHmnIHTu2hOPwX87tqHcQjz39HKoOwTWijtl_JwAVCU05bC-2-YeJr_eOMtMgG29z2Wo%3D&q=Silkeborg+Fad%C3%B8l+Reviews&sa=X&ved=2ahUKEwjj7rqa8-SFAxUIcfEDHTZcA78Q3PALegQIYxAF&biw=1536&bih=747&dpr=1.25",
+//       "_blank"
+//     );
+//   };
+
+//   circleContainer.appendChild(circleButton);
+
+//   document.getElementById("page").appendChild(circleContainer);
+
+//   window.addEventListener("scroll", function () {
+//     var scrollPosition = window.scrollY;
+//     if (scrollPosition > 0) {
+//       //textElement.style.visibility = "hidden";
+//       textElement.style.opacity = "0";
+
+//       circleButton.style.transition = "width 0.5s, border-radius 0.5s";
+//       circleButton.style.width = "50px";
+//       circleButton.style.borderTopRightRadius = "25px";
+//       circleButton.style.borderBottomRightRadius = "25px";
+//       textElement.style.transition = "opacity 0.5s";
+//     } else {
+//       //textElement.style.visibility = "hidden"; //HERE
+//       circleButton.style.transition = "width 0.5s, border-radius 0.5s";
+//       circleButton.style.width = "150px";
+//       circleButton.style.borderRadius = "25px";
+
+//       setTimeout(function () {
+//         //textElement.style.visibility = "visible";
+//         textElement.style.transition = "opacity 0.5s";
+//         textElement.style.opacity = "1";
+//       }, 500);
+//     }
+//   });
+// }
+// document.addEventListener("DOMContentLoaded", function () {
+//   createCircle();
+// });
+
 function createCircle() {
-  // Create a container div for the circle
   var circleContainer = document.createElement("div");
   circleContainer.style.position = "fixed";
   circleContainer.style.bottom = "20px";
   circleContainer.style.right = "20px";
   circleContainer.style.zIndex = "9999";
 
-  // Create the circle button
   var circleButton = document.createElement("button");
-  circleButton.style.width = "150px"; // Initial width
+  circleButton.style.width = "150px";
   circleButton.style.height = "50px";
-  circleButton.style.borderRadius = "25px"; // Initial border radius
-  circleButton.style.backgroundColor = "#FFFFFF"; // Change circle background color to white
-  //circleButton.style.border = "#e6d234";
-  circleButton.style.border = "2px solid #4285F4"; // Add border with Google blue color
+  circleButton.style.borderRadius = "25px";
+  circleButton.style.backgroundColor = "#FFFFFF";
+  circleButton.style.border = "2px solid #4285F4";
   circleButton.style.cursor = "pointer";
-  circleButton.style.display = "flex"; // Make it a flex container
-  circleButton.style.alignItems = "center"; // Center items vertically
-  circleButton.style.padding = "0 10px"; // Add padding to separate logo and text
+  circleButton.style.display = "flex";
+  circleButton.style.alignItems = "center";
+  circleButton.style.padding = "0 10px";
 
-  // Create the image element for the webp image
   var imageElement = document.createElement("img");
   imageElement.src =
     "https://silkeborgfadoel.dk/wp-content/uploads/2024/04/Google__G__logo.svg_.webp";
-  imageElement.style.width = "40px"; // Adjust logo size
-  imageElement.style.height = "auto"; // Maintain aspect ratio
+  imageElement.style.width = "40px";
+  imageElement.style.height = "auto";
 
-  // Create the text element
   var textElement = document.createElement("span");
   textElement.textContent = "Bedøm os";
-  textElement.style.marginLeft = "10px"; // Add margin between logo and tex // Initially hide text
+  textElement.style.marginLeft = "10px";
+  textElement.style.whiteSpace = "nowrap";
 
-  // Append the image and text to the circle button
   circleButton.appendChild(imageElement);
   circleButton.appendChild(textElement);
 
-  // Add click event to open Google in new tab
   circleButton.onclick = function () {
-    window.open("https://www.google.com", "_blank");
+    window.open(
+      "https://www.google.com/search?sca_esv=556fd070db8e09d3&sxsrf=ACQVn08rk407Os6IdfARRY3rIxfoRAL_-A:1714306992232&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCuQqLhOL229OZZ0qUXfn5ocfpAH3_Im-dovb8lf7mgY0EC6YlCD-OKrym7VYGilIUx4HJ8NQVIMGLM6YR1k_VxOtueNEARAD8QayBb2qGApO4NuBmU&si=AKbGX_oXOTjHK3vNPxrwAU4tsC2W_rsdJDrrSHpqUAOdbOh1q7pLHmnIHTu2hOPwX87tqHcQjz39HKoOwTWijtl_JwAVCU05bC-2-YeJr_eOMtMgG29z2Wo%3D&q=Silkeborg+Fad%C3%B8l+Reviews&sa=X&ved=2ahUKEwjj7rqa8-SFAxUIcfEDHTZcA78Q3PALegQIYxAF&biw=1536&bih=747&dpr=1.25",
+      "_blank"
+    );
   };
 
-  // Append the button to the container
   circleContainer.appendChild(circleButton);
 
-  // Append the container to the page
   document.getElementById("page").appendChild(circleContainer);
 
-  // Add event listener for scroll
   window.addEventListener("scroll", function () {
     var scrollPosition = window.scrollY;
     if (scrollPosition > 0) {
-      // Narrow the circle from the right with animation
-      //textElement.style.opacity = "0";
-      textElement.style.visibility = "hidden";
+      //textElement.style.visibility = "hidden";
+      textElement.style.opacity = "0";
 
       circleButton.style.transition = "width 0.5s, border-radius 0.5s";
-      circleButton.style.width = "50px"; // Adjust width to show only the logo
-      circleButton.style.borderTopRightRadius = "25px"; // Adjust border radius
-      circleButton.style.borderBottomRightRadius = "25px"; // Adjust border radius
-      // Fade out the text
-      textElement.style.transition = "opacity 0.5s"; //HERE
-      // textElement.style.opacity = "0"; // Hide text
+      circleButton.style.width = "50px";
+      circleButton.style.borderTopRightRadius = "25px";
+      circleButton.style.borderBottomRightRadius = "25px";
+      textElement.style.transition = "opacity 0.2s";
     } else {
-      // Widen the circle with animation
+      //textElement.style.visibility = "hidden"; //HERE
       circleButton.style.transition = "width 0.5s, border-radius 0.5s";
-      circleButton.style.width = "150px"; // Initial width
-      circleButton.style.borderRadius = "25px"; // Initial border radius
-      // Fade in the text
+      circleButton.style.width = "150px";
+      circleButton.style.borderRadius = "25px";
+
       setTimeout(function () {
-        textElement.style.visibility = "visible";
+        //textElement.style.visibility = "visible";
         textElement.style.transition = "opacity 0.5s";
-        textElement.style.opacity = "1"; // Show text
-      }, 500); // Delay the text fade in to match the circle animation
+        textElement.style.opacity = "1";
+      }, 500);
     }
   });
 }
