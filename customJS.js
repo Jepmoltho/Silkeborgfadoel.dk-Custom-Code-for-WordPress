@@ -1,11 +1,6 @@
 function removeMissionStatementOnMobile() {
   if (document.location.href.length < 30) {
     document.querySelector(".site-branding").style.paddingBottom = "22px";
-  } else if (window.innerWidth < 800) {
-    document.querySelector(".site-description").style.display = "none";
-    document.querySelector(".entry-header").style.display = "none";
-    document.querySelector(".site-branding").style.paddingBottom = "0px";
-    document.querySelector(".site-content").style.paddingTop = "0px";
   }
 }
 
@@ -68,68 +63,6 @@ function hideWidgetsOnNews() {
   }
 }
 
-function addOpeningHours() {
-  var contactInformation = document.querySelector(".contact-information");
-
-  if (contactInformation) {
-    var openingHoursSpan = document.createElement("span");
-    openingHoursSpan.className = "opening-hours";
-
-    var clockIcon = document.createElement("i");
-    clockIcon.className = "fa fa-clock-o";
-    clockIcon.setAttribute("aria-hidden", "true");
-    clockIcon.style.paddingRight = "3px";
-
-    openingHoursSpan.appendChild(clockIcon);
-
-    var openingHoursTextSpan = document.createElement("span");
-    openingHoursTextSpan.textContent = "Alle dage 08-22";
-
-    openingHoursSpan.appendChild(openingHoursTextSpan);
-
-    contactInformation.appendChild(openingHoursSpan);
-  }
-}
-
-function addSecondPhoneNumber() {
-  var contactInformation = document.querySelector(".contact-information");
-  var firstPhone = document.querySelector(".contact-information .telephone");
-  firstPhone.style.marginRight = "2px";
-  firstPhone.style.display = "inline";
-
-  if (contactInformation) {
-    var telephoneSpan = document.createElement("span");
-    telephoneSpan.className = "second-telephone";
-    telephoneSpan.setAttribute("itemprop", "telephone");
-    telephoneSpan.style.display = "inline";
-
-    var telephoneLink = document.createElement("a");
-    telephoneLink.href = "tel:+45 30326664";
-
-    var screenReaderText = document.createElement("span");
-    screenReaderText.className = "screen-reader-text";
-    screenReaderText.textContent = "Telephone number";
-
-    telephoneLink.appendChild(screenReaderText);
-
-    var telephoneNumber = document.createElement("span");
-    telephoneNumber.textContent = " / +45 30326664";
-
-    telephoneLink.appendChild(telephoneNumber);
-
-    telephoneSpan.appendChild(telephoneLink);
-
-    if (contactInformation.children.length >= 2) {
-      contactInformation.insertBefore(
-        telephoneSpan,
-        contactInformation.children[1]
-      );
-    } else {
-      contactInformation.appendChild(telephoneSpan);
-    }
-  }
-}
-
 document.addEventListener("DOMContentLoaded", function () {
   removeMissionStatementOnMobile();
   hideWidgetsOnProductPage();
@@ -139,6 +72,4 @@ document.addEventListener("DOMContentLoaded", function () {
   hideWidgetsOnContact();
   hideWidgetsOnAbout();
   hideWidgetsOnNews();
-  addOpeningHours();
-  addSecondPhoneNumber();
 });
